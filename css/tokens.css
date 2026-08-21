@@ -1,0 +1,90 @@
+/* ==========================================================================
+   DUARTE TECCELL — DESIGN TOKENS
+   Dark Tech Laboratory identity.
+   Base: near-black w/ cool undertone + graphite. Electric blue = single
+   highlight, used sparingly. PCB-gold = micro technical accent only,
+   for measurement ticks / readout marks — never a background.
+   ========================================================================== */
+
+:root {
+  /* ---- Color: surfaces ---- */
+  --bg-base:        #0A0C10;   /* near-black, cool undertone (not pure #000) */
+  --bg-raised:      #12151B;   /* graphite panel */
+  --bg-raised-2:    #191D24;   /* graphite panel, one step up */
+  --bg-inverse:     #ECEDEF;   /* off-white surface, used rarely */
+
+  /* ---- Color: text ---- */
+  --text-primary:   #ECEDEF;
+  --text-secondary: #9AA2AD;   /* graphite gray */
+  --text-tertiary:  #5B626D;
+  --text-on-inverse:#0A0C10;
+
+  /* ---- Color: line & structure ---- */
+  --line-hairline:  rgba(236, 237, 239, 0.08);
+  --line-hairline-strong: rgba(236, 237, 239, 0.14);
+  --line-blueprint: rgba(44, 92, 255, 0.14);
+
+  /* ---- Color: accent ---- */
+  --accent-blue:      #2C5CFF;  /* electric blue — the highlight, not a fill */
+  --accent-blue-dim:  #14224D;  /* deep blue, for restrained glows/tints only */
+  --accent-blue-soft: rgba(44, 92, 255, 0.12);
+  --accent-gold:      #C9A227;  /* PCB trace gold — measurement marks only */
+  --accent-gold-soft: rgba(201, 162, 39, 0.14);
+
+  --state-success:   #3FBF7F;
+
+  /* ---- Typography: families ---- */
+  --font-display: 'Unbounded', 'Arial Narrow', sans-serif;
+  --font-body:    'Manrope', -apple-system, 'Segoe UI', sans-serif;
+  --font-mono:    'IBM Plex Mono', 'SFMono-Regular', monospace;
+
+  /* ---- Typography: scale (fluid) ---- */
+  --fs-display-xl: clamp(2.5rem, 5vw, 5.25rem);
+  --fs-display-l:  clamp(2.25rem, 4.4vw, 4.25rem);
+  --fs-display-m:  clamp(1.75rem, 2.8vw, 2.75rem);
+  --fs-heading:    clamp(1.25rem, 1.6vw, 1.5rem);
+  --fs-body-l:     1.125rem;
+  --fs-body:       1rem;
+  --fs-small:      0.875rem;
+  --fs-micro:      0.75rem;
+
+  --lh-tight:  1.02;
+  --lh-snug:   1.2;
+  --lh-normal: 1.55;
+
+  --ls-tight:  -0.02em;
+  --ls-normal: 0;
+  --ls-wide:   0.08em;
+  --ls-wider:  0.18em;
+
+  /* ---- Spacing ---- */
+  --space-3xs: 0.25rem;
+  --space-2xs: 0.5rem;
+  --space-xs:  0.75rem;
+  --space-s:   1rem;
+  --space-m:   1.5rem;
+  --space-l:   2.5rem;
+  --space-xl:  4rem;
+  --space-2xl: 6.5rem;
+  --space-3xl: 9rem;
+
+  --container-max: 1360px;
+  --container-pad: clamp(1.25rem, 4vw, 4rem);
+
+  /* ---- Radius (kept minimal — this brand uses edges, not rounded bubbles) ---- */
+  --radius-s: 2px;
+  --radius-m: 4px;
+
+  /* ---- Motion ---- */
+  --ease-precise: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-fast: 180ms;
+  --dur-med:  420ms;
+  --dur-slow: 900ms;
+
+  /* ---- Elevation (hairline, not blur/shadow-heavy) ---- */
+  --shadow-panel: 0 1px 0 rgba(255,255,255,0.03) inset, 0 24px 48px -32px rgba(0,0,0,0.6);
+}
+
+@media (prefers-color-scheme: light) {
+  /* Brand is intentionally dark-only; no light variant is offered. */
+}

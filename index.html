@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Duarte Teccell — Laboratório de Diagnóstico e Reparo de Smartphones</title>
+<meta name="description" content="Diagnóstico, reparo e recuperação de smartphones com precisão técnica. Duarte Teccell.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600;700&family=Manrope:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+<!-- ============================ HEADER ============================ -->
+<header class="site-header">
+  <a href="#hero" class="brand-mark">DUARTE TECCELL <small>Assistência técnica</small></a>
+
+  <nav class="main-nav">
+    <ul class="main-nav__links">
+      <li><a href="#hero">Início</a></li>
+      <li><a href="#servicos">Serviços</a></li>
+      <li><a href="#laboratorio">A Duarte</a></li>
+      <li><a href="#processo">Processo</a></li>
+      <li><a href="#depoimentos">Avaliações</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+    <a href="#" class="btn btn-ghost" data-whatsapp>Solicitar diagnóstico</a>
+  </nav>
+
+  <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<div class="nav-drawer">
+  <ul>
+    <li><a href="#hero">Início</a></li>
+    <li><a href="#servicos">Serviços</a></li>
+    <li><a href="#laboratorio">A Duarte</a></li>
+    <li><a href="#processo">Processo</a></li>
+    <li><a href="#depoimentos">Avaliações</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+  <a href="#" class="btn btn-primary" data-whatsapp>Solicitar diagnóstico</a>
+</div>
+
+<main>
+
+<!-- ============================ HERO ============================ -->
+<section class="hero" id="hero">
+  <div class="hero__grid-overlay" aria-hidden="true"></div>
+  <div class="container">
+
+    <div class="hero__copy">
+      <span class="eyebrow">Diagnóstico técnico especializado</span>
+      <h1 class="hero__title">DUARTE TECCELL<br><span class="accent">Tecnologia que<br>volta a funcionar.</span></h1>
+      <p class="hero__sub">Diagnóstico, reparo e recuperação de smartphones com precisão técnica — do componente ao aparelho completo.</p>
+
+      <div class="hero__ctas">
+        <a href="#" class="btn btn-primary" data-whatsapp data-whatsapp-message="Olá, Duarte Teccell! Gostaria de solicitar um diagnóstico para o meu aparelho.">
+          Solicitar diagnóstico <span class="btn-arrow">→</span>
+        </a>
+        <a href="#laboratorio" class="btn btn-ghost">Conhecer a Duarte</a>
+      </div>
+
+      <div class="hero__meta">
+        <span>● Sistema de diagnóstico ativo</span>
+        <span style="color:var(--text-tertiary)">Apple · Samsung · Motorola · Xiaomi</span>
+      </div>
+    </div>
+
+    <div class="hero__visual" data-hero-parallax>
+      <div class="phone-schematic">
+        <svg viewBox="0 0 300 600" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ilustração técnica de smartphone em diagnóstico">
+          <rect x="20" y="10" width="260" height="580" rx="34" class="schematic-line" stroke-width="1.4" />
+          <rect x="20" y="10" width="260" height="580" rx="34" class="schematic-fill-dark" opacity="0.5" />
+          <rect x="118" y="34" width="64" height="18" rx="9" class="schematic-line" stroke-width="1.2" />
+          <circle cx="150" cy="90" r="46" class="schematic-line" stroke-width="1" opacity="0.5" />
+          <circle cx="150" cy="90" r="30" class="schematic-accent" stroke-width="1" opacity="0.7" />
+          <line x1="46" y1="160" x2="254" y2="160" class="schematic-line" stroke-width="1" opacity="0.5" />
+          <line x1="46" y1="340" x2="254" y2="340" class="schematic-line" stroke-width="1" opacity="0.5" />
+          <line x1="46" y1="470" x2="254" y2="470" class="schematic-line" stroke-width="1" opacity="0.5" />
+          <rect x="60" y="180" width="180" height="140" class="schematic-accent" stroke-width="0.75" stroke-dasharray="3 4" opacity="0.5" />
+          <rect x="70" y="360" width="160" height="90" class="schematic-line" stroke-width="0.75" stroke-dasharray="2 5" opacity="0.4" />
+          <line x1="20" y1="120" x2="0" y2="120" class="schematic-accent" stroke-width="1" />
+          <line x1="280" y1="220" x2="300" y2="220" class="schematic-accent" stroke-width="1" />
+
+          <line x1="20" y1="0" x2="280" y2="0" class="scan-sweep">
+            <animate attributeName="y1" values="0;600;0" dur="6s" repeatCount="indefinite" />
+            <animate attributeName="y2" values="0;600;0" dur="6s" repeatCount="indefinite" />
+          </line>
+        </svg>
+      </div>
+
+      <span class="floating-label floating-label--1">Diagnóstico</span>
+      <span class="floating-label floating-label--2">Precisão</span>
+      <span class="floating-label floating-label--3">Recuperação</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================ CONCEITO ============================ -->
+<section class="section" id="conceito">
+  <div class="container">
+    <span class="eyebrow">Metodologia</span>
+    <h2 class="section-title" style="margin-top:var(--space-s)">NÃO É APENAS UM REPARO.</h2>
+    <p class="section-lede" style="margin-top:var(--space-m)">Cada aparelho possui uma história, um problema e uma solução. Na Duarte Teccell, o processo começa pelo diagnóstico — e só avança quando cada causa está confirmada.</p>
+
+    <div class="diagnostic" data-reveal>
+      <div class="diagnostic__step">
+        <div class="diagnostic__num">01</div>
+        <div class="diagnostic__label">Diagnóstico</div>
+      </div>
+
+      <div class="diagnostic__center">
+        <svg viewBox="0 0 120 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="10" y="6" width="100" height="188" rx="16" class="schematic-line" stroke-width="1.2" />
+          <circle cx="60" cy="40" r="16" class="schematic-accent" stroke-width="1" opacity="0.7" />
+          <line x1="26" y1="80" x2="94" y2="80" class="schematic-line" stroke-width="0.75" opacity="0.5" />
+          <line x1="26" y1="150" x2="94" y2="150" class="schematic-line" stroke-width="0.75" opacity="0.5" />
+        </svg>
+      </div>
+
+      <div class="diagnostic__step">
+        <div class="diagnostic__num">02 — 03</div>
+        <div class="diagnostic__label">Precisão &amp; Recuperação</div>
+      </div>
+    </div>
+    <hr class="diagnostic__connector" style="margin-top:1.5rem" aria-hidden="true">
+  </div>
+</section>
+
+<!-- ============================ SERVIÇOS ============================ -->
+<section class="section" id="servicos">
+  <div class="container">
+    <span class="eyebrow">Especialidades técnicas</span>
+    <h2 class="section-title" style="margin-top:var(--space-s)">ESPECIALISTAS EM RESOLVER O QUE PARECE NÃO TER SOLUÇÃO.</h2>
+    <p class="section-lede" style="margin-top:var(--space-m)">Passe o cursor — ou toque — sobre cada especialidade para abrir o painel técnico correspondente.</p>
+
+    <div class="services-layout" data-reveal>
+      <div class="service-index" data-service-index role="list" aria-label="Lista de serviços"></div>
+
+      <div class="service-readout">
+        <div class="service-readout__top">
+          <span>Painel técnico</span>
+          <span class="live">● leitura ativa</span>
+        </div>
+        <h3 class="service-readout__title" data-readout-title>Display</h3>
+        <p class="service-readout__desc" data-readout-desc></p>
+        <svg class="service-readout__wave" data-readout-wave viewBox="0 0 340 46" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M0,23 C 40,6 60,40 100,20 C 140,4 180,36 220,18 C 260,6 300,30 340,23" />
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ POR DENTRO / LABORATÓRIO ============================ -->
+<section class="section" id="laboratorio">
+  <div class="container">
+    <span class="eyebrow">A Duarte</span>
+    <h2 class="section-title" style="margin-top:var(--space-s)">PRECISÃO ACONTECE NOS DETALHES.</h2>
+    <p class="section-lede" style="margin-top:var(--space-m)">Antes de qualquer reparo, existe uma bancada técnica, instrumentos de medição e um processo definido para chegar à causa real da falha.</p>
+
+    <div class="lab-visual" data-reveal>
+      <svg viewBox="0 0 800 400" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Ilustração esquemática de bancada técnica">
+        <line x1="0" y1="330" x2="800" y2="330" class="schematic-line" stroke-width="1" opacity="0.4" />
+        <rect x="60" y="180" width="220" height="150" class="schematic-line" stroke-width="1" opacity="0.35" />
+        <line x1="80" y1="210" x2="260" y2="210" class="schematic-accent" stroke-width="0.75" opacity="0.6" />
+        <line x1="80" y1="240" x2="230" y2="240" class="schematic-line" stroke-width="0.75" opacity="0.4" />
+        <line x1="80" y1="270" x2="250" y2="270" class="schematic-line" stroke-width="0.75" opacity="0.4" />
+        <circle cx="240" cy="300" r="10" class="schematic-accent" stroke-width="0.75" opacity="0.6" />
+
+        <rect x="340" y="140" width="150" height="190" class="schematic-line" stroke-width="1" opacity="0.35" />
+        <circle cx="415" cy="190" r="34" class="schematic-line" stroke-width="1" opacity="0.5" />
+        <circle cx="415" cy="190" r="18" class="schematic-accent" stroke-width="1" opacity="0.7" />
+        <line x1="365" y1="260" x2="465" y2="260" class="schematic-line" stroke-width="0.75" opacity="0.4" />
+        <line x1="365" y1="290" x2="440" y2="290" class="schematic-line" stroke-width="0.75" opacity="0.4" />
+
+        <rect x="540" y="200" width="200" height="130" class="schematic-line" stroke-width="1" opacity="0.35" />
+        <line x1="560" y1="230" x2="720" y2="230" class="schematic-accent" stroke-width="0.5" stroke-dasharray="4 4" opacity="0.5" />
+        <line x1="560" y1="255" x2="700" y2="255" class="schematic-line" stroke-width="0.5" stroke-dasharray="4 4" opacity="0.4" />
+        <line x1="560" y1="280" x2="680" y2="280" class="schematic-line" stroke-width="0.5" stroke-dasharray="4 4" opacity="0.4" />
+      </svg>
+
+      <span class="lab-tag lab-tag--1">Microeletrônica</span>
+      <span class="lab-tag lab-tag--2">Diagnóstico</span>
+      <span class="lab-tag lab-tag--3">Precisão</span>
+      <span class="lab-tag lab-tag--4">Testes</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ PROCESSO ============================ -->
+<section class="section" id="processo">
+  <div class="container">
+    <span class="eyebrow">Como funciona</span>
+    <h2 class="section-title" style="margin-top:var(--space-s)">DO CONTATO AO APARELHO TESTADO.</h2>
+
+    <div class="process-track" data-reveal>
+      <div class="process-step">
+        <div class="process-step__num">01</div>
+        <div class="process-step__label">Você chama</div>
+        <p class="process-step__note">Via WhatsApp, com foto ou descrição do problema.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-step__num">02</div>
+        <div class="process-step__label">Diagnóstico</div>
+        <p class="process-step__note">Identificação técnica da causa real da falha.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-step__num">03</div>
+        <div class="process-step__label">Orçamento</div>
+        <p class="process-step__note">Valor e prazo definidos antes de qualquer reparo.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-step__num">04</div>
+        <div class="process-step__label">Reparo</div>
+        <p class="process-step__note">Execução técnica com componentes adequados.</p>
+      </div>
+      <div class="process-step is-emphasis">
+        <div class="process-step__num">05</div>
+        <div class="process-step__label">Testes</div>
+        <p class="process-step__note">Nenhum aparelho sai sem validação completa.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-step__num">06</div>
+        <div class="process-step__label">Aparelho pronto</div>
+        <p class="process-step__note">Entrega com o funcionamento verificado.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ CONFIANÇA ============================ -->
+<section class="section" id="confianca">
+  <div class="container">
+    <span class="eyebrow">Em números</span>
+    <h2 class="section-title" style="margin-top:var(--space-s)">EXPERIÊNCIA QUE SE MEDE.</h2>
+
+    <div class="stats-row" data-stats-row></div>
+    <p style="margin-top:var(--space-s); font-family:var(--font-mono); font-size:var(--fs-micro); color:var(--text-tertiary)">Números de referência — atualizados conforme dados reais da Duarte Teccell.</p>
+  </div>
+</section>
+
+<!-- ============================ MARCAS ============================ -->
+<section class="section" id="marcas">
+  <div class="container">
+    <span class="eyebrow">Cobertura técnica</span>
+    <h2 class="section-title" style="margin-top:var(--space-s)">SEU APARELHO. NOSSA ESPECIALIDADE.</h2>
+    <div class="brand-strip" data-brand-strip data-reveal></div>
+  </div>
+</section>
+
+<!-- ============================ ANTES / DEPOIS ============================ -->
+<section class="section" id="comparativo">
+  <div class="container">
+    <span class="eyebrow">Resultado</span>
+    <h2 class="section-title" style="margin-top:var(--space-s)">O QUE A PRECISÃO TÉCNICA RESOLVE.</h2>
+
+    <div class="compare" data-compare data-reveal>
+      <div class="compare__side compare__after">
+        <svg class="compare__illustration" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="60" y="20" width="80" height="160" rx="14" stroke="var(--line-hairline-strong)" stroke-width="1.2"/>
+          <rect x="72" y="40" width="56" height="96" stroke="var(--accent-blue)" stroke-width="1" opacity="0.6"/>
+          <line x1="72" y1="150" x2="128" y2="150" stroke="var(--line-hairline-strong)" stroke-width="1"/>
+          <path d="M84 88 L96 100 L118 74" stroke="var(--accent-blue)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="compare__tag compare__tag--after">Depois — display substituído e testado</span>
+      </div>
+      <div class="compare__side compare__before">
+        <div class="compare__before-inner">
+          <svg class="compare__illustration" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="60" y="20" width="80" height="160" rx="14" stroke="var(--line-hairline-strong)" stroke-width="1.2"/>
+            <rect x="72" y="40" width="56" height="96" stroke="var(--line-hairline-strong)" stroke-width="1" opacity="0.5"/>
+            <path d="M100 40 L92 70 L104 78 L88 110 L112 96 L98 136" stroke="var(--accent-gold)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" opacity="0.85"/>
+          </svg>
+          <span class="compare__tag compare__tag--before">Antes — falha de display identificada</span>
+        </div>
+      </div>
+      <div class="compare__handle"><span class="compare__grip" aria-hidden="true">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 3L1 7L4 11" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M10 3L13 7L10 11" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span></div>
+    </div>
+    <p class="compare__note">Ilustração representativa do processo — substitua pelas fotos reais do reparo.</p>
+  </div>
+</section>
+
+<!-- ============================ DEPOIMENTOS ============================ -->
+<section class="section" id="depoimentos">
+  <div class="container">
+    <span class="eyebrow">Avaliações</span>
+    <h2 class="section-title" style="margin-top:var(--space-s)">QUEM CONFIA, VOLTA.</h2>
+
+    <div class="testimonials" data-testimonials></div>
+  </div>
+</section>
+
+<!-- ============================ CTA FINAL ============================ -->
+<section class="cta-final" id="contato">
+  <div class="cta-final__line" aria-hidden="true"></div>
+  <div class="container">
+    <h2 class="cta-final__title">SEU CELULAR PAROU.<br><span class="accent">A TECNOLOGIA NÃO.</span></h2>
+    <p class="cta-final__sub">Descubra o que está acontecendo com seu aparelho — diagnóstico técnico, sem enrolação.</p>
+    <a href="#" class="btn btn-primary" data-whatsapp>Solicitar diagnóstico <span class="btn-arrow">→</span></a>
+  </div>
+</section>
+
+</main>
+
+<!-- ============================ FOOTER ============================ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#hero" class="brand-mark">DUARTE TECCELL</a>
+        <p>Laboratório de diagnóstico, reparo e recuperação de smartphones.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="#hero">Início</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#laboratorio">A Duarte</a></li>
+          <li><a href="#processo">Processo</a></li>
+          <li><a href="#depoimentos">Avaliações</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="#" data-whatsapp>WhatsApp</a></li>
+          <li><a href="#" data-contact-instagram target="_blank" rel="noopener">Instagram</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Endereço &amp; horário</h4>
+        <ul>
+          <li><address data-contact-address></address></li>
+          <li><span data-contact-hours></span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© <span data-year></span> Duarte Teccell — Assistência Técnica</span>
+      <span>Diagnóstico, reparo e recuperação de smartphones</span>
+    </div>
+  </div>
+</footer>
+
+<a href="#" class="whatsapp-float" data-whatsapp aria-label="Falar no WhatsApp">
+  <span class="whatsapp-float__dot" aria-hidden="true"></span>
+  <span class="wa-label">WhatsApp</span>
+</a>
+
+<script src="js/data.js"></script>
+<script src="js/render.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
