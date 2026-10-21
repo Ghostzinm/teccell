@@ -645,22 +645,179 @@ h1 em,h2 em {
 }
 
 .reveal {
-  animation:appear .7s both
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 700ms ease, transform 700ms cubic-bezier(.2,.7,.2,1);
 }
 
-@keyframes appear {
-  from {
-  opacity:0;
-  transform:translateY(13px)
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-to {
-  opacity:1;
-  transform:none
+.hero > img {
+  animation: hero-drift 18s ease-in-out infinite alternate;
 }
 
-
+.hero-content > * {
+  animation: hero-enter 800ms both;
 }
+
+.hero-content > :nth-child(2) { animation-delay: 100ms; }
+.hero-content > :nth-child(3) { animation-delay: 180ms; }
+.hero-content > :nth-child(4) { animation-delay: 260ms; }
+
+.button,
+.contact-link,
+.navcta {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  transition: color 220ms ease, background-color 220ms ease, transform 220ms ease, box-shadow 220ms ease;
+}
+
+.button::after,
+.contact-link::after,
+.navcta::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: linear-gradient(110deg, transparent 25%, #ffffff30 48%, transparent 68%);
+  transform: translateX(-120%);
+  transition: transform 600ms ease;
+}
+
+.button:hover::after,
+.contact-link:hover::after,
+.navcta:hover::after {
+  transform: translateX(120%);
+}
+
+.button:hover,
+.contact-link:hover {
+  box-shadow: 0 10px 30px #087cf044;
+}
+
+.feature {
+  overflow: hidden;
+  transition: background-color 300ms ease, transform 300ms cubic-bezier(.2,.7,.2,1), border-color 300ms ease;
+}
+
+.feature::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 2px;
+  background: var(--blue);
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 350ms ease;
+}
+
+.feature:hover {
+  transform: translateY(-5px);
+  background: linear-gradient(135deg, #111923, #0e1116 65%);
+}
+
+.feature:hover::before { transform: scaleY(1); }
+.feature .service-icon { transition: transform 300ms ease, text-shadow 300ms ease; }
+.feature:hover .service-icon { transform: translateY(-3px) scale(1.08); text-shadow: 0 0 22px #087cf066; }
+.feature .arrow { transition: transform 250ms ease; }
+.feature:hover .arrow { transform: translate(3px, -3px); }
+
+.photo img,
+.precision-photo img,
+.screen-promo img,
+.warranty-art img {
+  transition: transform 700ms cubic-bezier(.2,.7,.2,1), filter 500ms ease;
+}
+
+.photo:hover img,
+.precision-photo:hover img,
+.screen-promo:hover img,
+.warranty-art:hover img {
+  transform: scale(1.025);
+  filter: brightness(.92);
+}
+
+.quote-result {
+  transition: border-color 300ms ease, box-shadow 300ms ease;
+}
+
+.quote-result:has(.quote-value:not([hidden])) {
+  border-color: #087cf088;
+  box-shadow: inset 3px 0 0 var(--blue), 0 15px 50px #0004;
+}
+
+.quote-value:not([hidden]) {
+  animation: value-in 420ms cubic-bezier(.2,.8,.2,1) both;
+}
+
+.quote-form select {
+  transition: border-color 180ms ease, background-color 180ms ease, box-shadow 180ms ease;
+}
+
+.quote-form select:focus-visible {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 4px #087cf022;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #55a8ff;
+  outline-offset: 4px;
+}
+
+@keyframes hero-drift {
+  from { transform: scale(1); }
+  to { transform: scale(1.045); }
+}
+
+@keyframes hero-enter {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes value-in {
+  from { opacity: 0; transform: translateY(8px) scale(.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .features .feature:nth-child(2) { transition-delay: 35ms; }
+  .features .feature:nth-child(3) { transition-delay: 70ms; }
+}
+
+@media (max-width: 650px) {
+  .hero > img { animation-duration: 24s; }
+  .feature:hover { transform: none; }
+  .photo:hover img,
+  .precision-photo:hover img,
+  .screen-promo:hover img,
+  .warranty-art:hover img { transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero > img,
+  .hero-content > *,
+  .quote-value:not([hidden]) { animation: none; }
+
+  .reveal,
+  .button,
+  .contact-link,
+  .navcta,
+  .feature,
+  .photo img,
+  .precision-photo img,
+  .screen-promo img,
+  .warranty-art img,
+  .quote-result,
+  .quote-form select { transition: none; }
+
+  .reveal { opacity: 1; transform: none; }
+}
+
 
 @media(max-width:900px) {
   .pad {
@@ -741,11 +898,23 @@ to {
 .menu span {
   width:21px;
   height:1px;
-  background:#fff
+  background:#fff;
+  transition: transform 220ms ease
+}
+
+.menu[aria-expanded="true"] span:first-child {
+  transform: translateY(3px) rotate(45deg)
+}
+
+.menu[aria-expanded="true"] span:last-child {
+  transform: translateY(-3px) rotate(-45deg)
 }
 
 .top nav {
-  display:none;
+  display:flex;
+  visibility:hidden;
+  opacity:0;
+  pointer-events:none;
   position:absolute;
   top:65px;
   left:0;
@@ -754,11 +923,16 @@ to {
   padding:12px 21px 21px;
   flex-direction:column;
   align-items:stretch;
-  gap:0
+  gap:0;
+  transform:translateY(-8px);
+  transition:opacity 220ms ease, transform 220ms ease, visibility 220ms ease
 }
 
 .top nav.open {
-  display:flex
+  visibility:visible;
+  opacity:1;
+  pointer-events:auto;
+  transform:translateY(0)
 }
 
 .top nav a {
@@ -1270,4 +1444,36 @@ h1 {
   .warranty-art img {
     max-width: 170px;
   }
+}
+
+
+
+/* Consultation selectors */
+.quote-form select:disabled {
+  cursor: not-allowed;
+  opacity: 0.58;
+}
+
+.model-help {
+  min-height: 1.5em;
+  margin: 2px 0 6px;
+  color: #a0a8b3;
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+.quote-title {
+  margin: 20px 0 0;
+  color: #b6c0cc;
+  font-size: 13px;
+}
+
+.quote-value {
+  margin-top: 8px;
+}
+
+.quote-form select optgroup {
+  background: #0e1116;
+  color: #b5c1cf;
+  font-weight: 600;
 }

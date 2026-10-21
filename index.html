@@ -182,49 +182,40 @@
                     <span class="screen-promo-cta">Veja uma estimativa para o seu aparelho <b>↗</b></span>
                 </a>
             </section>
-            <section class="quote pad" id="consulta">
+                        <section class="quote pad" id="consulta">
                 <div class="heading reveal">
                     <div>
                         <p class="eyebrow"><i></i> ESTIMATIVA INICIAL</p>
                         <h2>Consulte o valor<br><em>do reparo.</em></h2>
                     </div>
-                    <p>Selecione o tipo de aparelho e o serviço para consultar uma faixa estimada.</p>
+                    <p>Escolha o serviço e a marca para ver os modelos por faixa de preço.</p>
                 </div>
                 <div class="quote-layout">
                     <form class="quote-form" id="quote-form">
-                        <label for="quote-brand">Tipo de aparelho</label>
-                        <select id="quote-brand" name="brand" required>
-                            <option value="" selected disabled>Selecione a marca</option>
-                            <option value="iphone">Apple / iPhone</option>
-                            <option value="samsung">Samsung Galaxy</option>
-                            <option value="motorola">Motorola</option>
-                            <option value="xiaomi">Xiaomi / Redmi</option>
-                            <option value="other">Outra marca</option>
-                        </select>
-                        <label for="quote-model">Modelo</label>
-                        <input id="quote-model" name="model" type="text" placeholder="Ex.: iPhone 13, Galaxy S22" autocomplete="off" required>
                         <label for="quote-service">Serviço</label>
                         <select id="quote-service" name="service" required>
                             <option value="" selected disabled>Selecione o serviço</option>
-                            <option value="screen">Troca de tela</option>
-                            <option value="battery">Troca de bateria</option>
-                            <option value="back-cover">Troca de tampa traseira</option>
-                            <option value="charging-port">Conector de carga</option>
-                            <option value="camera">Troca de câmera</option>
-                            <option value="cleaning">Limpeza interna</option>
-                            <option value="oxidation">Recuperação de oxidação</option>
-                            <option value="microsoldering">Micro solda / reparo em placa</option>
-                            <option value="diagnostics">Diagnóstico e reparos gerais</option>
                         </select>
-                        <button class="button quote-submit" type="submit">Consultar estimativa <span>↗</span></button>
-                        <p class="quote-disclaimer">As faixas são referências por marca e serviço. O valor pode variar conforme o modelo e a condição do aparelho; confirmamos o orçamento após avaliação.</p>
+
+                        <label for="quote-brand">Marca</label>
+                        <select id="quote-brand" name="brand" required disabled>
+                            <option value="" selected>Selecione primeiro o serviço</option>
+                        </select>
+
+                        <label for="quote-model">Modelo</label>
+                        <select id="quote-model" name="model" required disabled aria-describedby="model-help">
+                            <option value="" selected>Selecione serviço e marca primeiro</option>
+                        </select>
+                        <p class="model-help" id="model-help" aria-live="polite">Selecione um serviço para ver as marcas e modelos disponíveis.</p>
+                        <p class="quote-disclaimer">As faixas são referências. O orçamento final depende da avaliação técnica do aparelho.</p>
                     </form>
-                    <aside class="quote-result" id="quote-result" aria-live="polite" aria-atomic="true">
+                    <aside class="quote-result" aria-live="polite" aria-atomic="true">
                         <span class="quote-result-label">SUA ESTIMATIVA</span>
-                        <p class="quote-prompt">Preencha os campos para consultar uma estimativa.</p>
-                        <p class="quote-value" hidden></p>
-                        <p class="quote-status">O orçamento final é confirmado antes de qualquer reparo.</p>
-                        <a class="quote-whatsapp" data-whatsapp href="#contato" hidden>Continuar pelo WhatsApp <span>↗</span></a>
+                        <p class="quote-prompt" id="quote-prompt">Escolha o serviço, a marca e o modelo para consultar a faixa.</p>
+                        <p class="quote-title" id="quote-title" hidden></p>
+                        <p class="quote-value" id="quote-value" hidden></p>
+                        <p class="quote-status" id="quote-status">Escolha o serviço, a marca e o modelo para consultar a faixa.</p>
+                        <a class="quote-whatsapp" id="quote-whatsapp" href="#contato" hidden>Continuar pelo WhatsApp <span>↗</span></a>
                     </aside>
                 </div>
             </section>
@@ -336,6 +327,7 @@
                 <span id="year"></span> DUARTE_TECcell
             </small>
         </footer>
+        <script src="catalog.js"></script>
         <script src="script.js" defer></script>
     </body>
 </html>
