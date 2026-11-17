@@ -119,7 +119,9 @@ h2 {
     gap: 24px;
     padding: 12px max(20px, calc((100% - 1120px)/2));
     background: color-mix(in srgb, var(--bg) 78%, transparent);
+    -webkit-backdrop-filter: blur(14px);
     backdrop-filter: blur(14px);
+    padding-top: max(12px, env(safe-area-inset-top));
     border-bottom: 1px solid var(--ln)
 }
 
@@ -202,6 +204,7 @@ h2 {
 .hero {
     position: relative;
     min-height: min(86vh, 720px);
+    min-height: min(86svh, 720px);
     display: grid;
     align-items: end;
     overflow: hidden
@@ -218,7 +221,7 @@ h2 {
 .shade {
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(7, 9, 13, .35), var(--bg)), radial-gradient(60% 60% at 20% 70%, rgba(7, 9, 13, .8), transparent)
+    background: linear-gradient(180deg, rgba(7, 9, 13, .5), rgba(7, 9, 13, .9)), radial-gradient(60% 60% at 20% 70%, rgba(7, 9, 13, .6), transparent)
 }
 
 .hero-in {
@@ -270,7 +273,7 @@ h2 {
 
 .quote {
     display: grid;
-    grid-template-columns: 1.4fr 1fr;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
     gap: 24px;
     align-items: start
 }
@@ -318,6 +321,7 @@ h2 {
 }
 
 .opt {
+    min-height: 44px;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -366,9 +370,47 @@ h2 {
     border-radius: 999px
 }
 
+.steps-col {
+    min-width: 0
+}
+
 .models {
     display: grid;
-    gap: 8px
+    gap: 8px;
+    max-height: min(460px, 60vh);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding-right: 4px
+}
+
+.models .opt span {
+    min-width: 0;
+    overflow-wrap: anywhere
+}
+
+.models .opt small {
+    white-space: nowrap
+}
+
+.empty {
+    color: var(--mu);
+    font-size: 14px
+}
+
+.search {
+    width: 100%;
+    margin-bottom: 12px;
+    padding: 12px 14px;
+    border-radius: 12px;
+    border: 1px solid var(--ln);
+    background: var(--bg);
+    color: var(--tx);
+    font: inherit
+}
+
+.search:focus {
+    outline: 2px solid var(--ac);
+    border-color: transparent
 }
 
 .models .opt {
@@ -396,7 +438,10 @@ h2 {
     border-radius: var(--r);
     background: linear-gradient(160deg, var(--s2), var(--s));
     border: 1px solid var(--ln);
-    box-shadow: 0 0 60px -30px var(--ac)
+    box-shadow: 0 0 60px -30px var(--ac);
+    max-height: calc(100vh - 110px);
+    overflow-y: auto;
+    scroll-margin-top: 80px
 }
 
 .lbl {
@@ -584,8 +629,8 @@ details p {
 
 .fab {
     position: fixed;
-    right: 18px;
-    bottom: 18px;
+    right: max(18px, env(safe-area-inset-right));
+    bottom: max(18px, env(safe-area-inset-bottom));
     z-index: 30;
     display: grid;
     place-items: center;
@@ -617,7 +662,13 @@ details p {
     }
 
     .result {
-        position: static
+        position: static;
+        max-height: none;
+        overflow: visible
+    }
+
+    .top nav {
+        display: none
     }
 
     .pad {
